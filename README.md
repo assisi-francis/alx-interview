@@ -1,2 +1,2 @@
 # alx-interview
-ALX interview-like lasks
+ALX interview-like tasks
