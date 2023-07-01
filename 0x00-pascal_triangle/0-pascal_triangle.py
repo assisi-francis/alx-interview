@@ -7,7 +7,7 @@ def pascal_triangle(n):
     """
     triangle = []
     
-      if n <= 0:
+    if n <= 0:
         return triangle
     for i in range(n):
         temp_list = []
