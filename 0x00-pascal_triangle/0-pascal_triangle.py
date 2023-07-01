@@ -5,19 +5,18 @@ def pascal_triangle(n):
     """
     returns a list of lists of integers
     """
-    if n <= 0:
-        return []
+    triangle = []
     
-    triangle = [[1]]
-    
-    for i in range(1, n):
-        row = [1]
-        
-        for j in range(1, i):
-            value = triangle[i-1][j-1] + triangle[i-1][j]
-            row.append(value)
-        
-        row.append(1)
-        triangle.append(row)
+      if n <= 0:
+        return triangle
+    for i in range(n):
+        temp_list = []
+
+        for j in range(i+1):
+            if j == 0 or j == i:
+                temp_list.append(1)
+            else:
+                temp_list.append(triangle[i-1][j-1] + triangle[i-1][j])
+        triangle.append(temp_list)
     
     return triangle
