@@ -1,20 +1,26 @@
 #!/usr/bin/python3
+"""
+python script that computes a minimu operations
+"""
 
 
-def minOperations(n: int) -> int:
-    if n <= 1:
+def minOperations(n):
+    """
+    A method that computes the minimum number of operations
+    for task copy ALL and Paste
+    Returns the sum of the operations
+    """
+    if n < 2:
         return 0
     
-    operations = 0
-    factor = 2
+    factor_list = []
+    i = 1
     
-    while factor * factor <= n:
-        while n % factor == 0:
-            operations += factor
-            n //= factor
-        factor += 1
+    while n != 1:
+        i += 1
+        if n % i == 0:
+            while n % i == 0:
+                n /= i
+                factor_list.append(i)
     
-    if n > 1:
-        operations += n
-    
-    return operations
+    return sum(factor_list)
